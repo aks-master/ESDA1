@@ -1,4 +1,4 @@
-package com.prashantjain.yummyrest.entity;
+package com.aks.yummy.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -9,9 +9,10 @@ import lombok.*;
 @AllArgsConstructor
 @Entity
 @Table(name = "customer")
+
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "first_name", nullable = false)
@@ -25,4 +26,15 @@ public class Customer {
 
     @Column(name="password", nullable = false)
     private String password;
+
+    @Column(name = "address")
+    private String address;
+
+    @Column(name = "city")
+    private String city;
+
+    @Column(name = "pincode")
+    private String pincode;
+
 }
+

@@ -1,10 +1,10 @@
-package com.prashantjain.yummyrest;
+package com.aks.yummy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class YummyRestApplicationTests {
+class YummyApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,7 +1,8 @@
-package com.prashantjain.yummyrest.dto;
+package com.aks.yummy.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.*;
+import com.aks.yummy.validation.ValidationGroups.*;
 
 public record CustomerRequest(
         @NotNull(message = "Customer should be present")
@@ -18,13 +19,23 @@ public record CustomerRequest(
         @JsonProperty("email")
         String email,
 
-        @NotNull(message = "Password should be present")
-        @NotEmpty(message = "Password should be present")
-        @NotBlank(message = "Password should be present")
+        @NotNull(message = "Password should be present", groups = CreateGroup.class)
+        @NotEmpty(message = "Password should be present", groups = CreateGroup.class)
+        @NotBlank(message = "Password should be present", groups = CreateGroup.class)
         @Size(min = 6, max = 12)
         @JsonProperty("password")
         String password,
-         int p22,
-         int p21
+
+        @NotNull(message = "Address should be present")
+        @JsonProperty("address")
+        String address,
+
+        @NotNull(message = "City should be present")
+        @JsonProperty("city")
+        String city,
+
+        @NotNull(message = "Pincode should be present")
+        @JsonProperty("pincode")
+        String pincode
 ) {
 }
